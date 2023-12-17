@@ -15,7 +15,7 @@
 	
 5.Определить возможности по масштабированию решения и следующим его доработкам;
 
-## Решение:
+## Решение
 
 В качестве рабочей модели используется нейросеть CLIP от OpenAI, точнее - её уменьшенная модель RuClipTiny. 
 
@@ -26,7 +26,7 @@
 
 Данные для обучения собраны при помощи парсера GoogleImageCrawler с изменённым downloader-ом, а также взяты из открытых источников.
 
-## Полезное:
+## Полезное
 
 https://github.com/hellock/icrawler
 https://www.kaggle.com/datasets/jutrera/stanford-car-dataset-by-classes-folder
