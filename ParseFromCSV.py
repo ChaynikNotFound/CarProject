@@ -1,0 +1,18 @@
+from icrawler.builtin import  GoogleImageCrawler,GoogleFeeder,GoogleParser,ImageDownloader
+from icrawler import downloader
+from urllib.parse import urlparse
+import pandas as pd
+
+
+class MyDownloader(ImageDownloader):
+    def get_filename(self, task, default_ext):
+        url_path = urlparse(task["file_url"])[2]
+        extension = url_path.split(".")[-1] if "." in url_path else default_ext
+        file_idx = i +str(self.fetched_num)
+        return f"{file_idx}.{extension}"
+
+df = pd.read_csv('carbase.csv')
+a = df['Acura Integra Type R 2001']
+crawler = GoogleImageCrawler(downloader_cls=MyDownloader, storage={'root_dir': 'C:/Users/79166/Desktop/флуд'})
+for i in a:
+    crawler.crawl(max_num=10, keyword=i)
